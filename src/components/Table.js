@@ -2,17 +2,24 @@ import React, { Component } from 'react'
 
 export class Table extends Component {
   render() {
-    return (
-      <table>
+
+
+    const TableHeader = () => {
+        return (
             <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Job</th>
-                </tr>
+            <tr>
+                <th>Namex</th>
+                <th>Jobx</th>
+            </tr>
             </thead>
+        )
+    }
+
+    const TableBody = () => {
+        return (
             <tbody>
                 <tr>
-                    <td>Charlie</td>
+                    <td>Charliex</td>
                     <td>Janitor</td>
                 </tr>
                 <tr>
@@ -25,9 +32,16 @@ export class Table extends Component {
                 </tr>
                 <tr>
                     <td>Dennis</td>
-                    <td>Bartender</td>
+                    <td>Bartenderx</td>
                 </tr>
             </tbody>
+        )
+    }
+
+    return (
+        <table>
+            < TableHeader />
+            < TableBody />
         </table>
     );
   }
