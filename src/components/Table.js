@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class Table extends Component {
   render() {
 
-    const {characterData } = this.props; // create a variable called chardata that is the props passed from app.js
+    const {characterData, removeCharacter } = this.props; // create a variable called chardata that is the props passed from app.js
 
     const TableHeader = () => {
         return (
@@ -11,6 +11,7 @@ export class Table extends Component {
             <tr>
                 <th>Namex</th>
                 <th>Jobx</th>
+                <th>Mathx</th>
             </tr>
             </thead>
         )
@@ -44,7 +45,9 @@ export class Table extends Component {
                     <td>{objr.name}</td>
                     {/* I want to do an if statement and say nice guy if index > 10 */}
                     <td>{objr.job} bitch</td>
-                    <p>2 to the i = {Math.pow(2,mindex)}</p>
+                    <td>2 to the i = {Math.pow(2,mindex)}</td>
+                    <td><button onClick={()=> props.removeCharacter(mindex)}>delete</button></td>
+
                 </tr>
             );
         });
@@ -55,7 +58,10 @@ export class Table extends Component {
     return (
         <table>
             < TableHeader />
-            < TableBody characterData={characterData}/>
+            < TableBody
+                characterData={characterData}
+                removeCharacter={removeCharacter}
+            />
             {/* I think this is taking the props and passing it down as more props to the tablebody component */}
         </table>
     );
