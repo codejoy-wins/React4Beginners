@@ -34,15 +34,11 @@ export class Table extends Component {
         const data = props.characterData;
         console.log(props.characterData);
         console.log(data);
-        // okay I get it!  
         // Map takes in 2 parameters
         // One to refer to the current object for the function to use
         // the other to reference the current index of the list it's mapping
         // the .map method applies to an array of objects, and for each object in the list, it creates a variable objr for that object, and increments mindex. 
-
         // then all of the data is trapped in the myObjs element I use in tbody
-
-        //
         const myObjs = data.map((objr, mindex)=> {
             if(mindex%2==1){
                 return(
@@ -57,17 +53,12 @@ export class Table extends Component {
             return (
                 <tr key={mindex}>
                     <td>{objr.name}</td>
-                    {/* I want to do an if statement and say nice guy if index > 10 */}
-                    {/* I did it.  I made it return multiple things depending on condition of mindex */}
-
                     <td>American {objr.job}</td>
                     <td>{Math.pow(2,mindex)}</td>
                     <td><button onClick={()=> props.removeCharacter(mindex)}>delete</button></td>
-
                 </tr>
             );
         });
-// okay but map always throws me off so I redid my own above
         return <tbody>{myObjs}</tbody>;
     }
 
@@ -78,7 +69,6 @@ export class Table extends Component {
                 characterData={characterData}
                 removeCharacter={removeCharacter}
             />
-            {/* I think this is taking the props and passing it down as more props to the tablebody component */}
         </table>
     );
   }

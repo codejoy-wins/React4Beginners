@@ -30,17 +30,44 @@ class App extends Component {
             characters: [...this.state.characters,character]
         })
     }
+    crazy = (cookies) => {
+        console.log("I want to manipulate the DOM saying you're crazy");
+        let msg = ``;
+        if(cookies>100){
+            msg = `
+            <p>You're crazy for cookies!</p>
+            `
+        }else if(cookies>60){
+            msg = `
+            <p>You're really crazy.</p>
+            `
+        }else if(cookies>=50){
+            msg = `
+            <p>You're crazy.</p>
+            `
+        }else{
+            msg =`
+            <p>Something went wrong.</p>
+            `
+        }
+        
+        document.getElementById("output").innerHTML = msg;
+    }
 
     eatCookies = cookies => {
         cookies++;
+        if(cookies >= 50){
+            this.crazy(cookies);
+        }
         this.setState({
             cookies: cookies
         })
     }
 
+    
+
     render() {
         const { characters, cookies } = this.state;
-        // I get that that's restructuring but where does it belong in the file?
         // give the table the props for the characters and removal method
         // give the form the method for handling submissions
         return (

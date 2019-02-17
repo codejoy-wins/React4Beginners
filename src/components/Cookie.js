@@ -10,6 +10,7 @@ export class Cookie extends Component {
       <div>
         <h1> {prop_cookies}     Cookies</h1>
         <button onClick={()=>eat_cookies(prop_cookies)}>Eat more cookies</button>
+        <div id="output"></div>
       </div>
     )
   }
