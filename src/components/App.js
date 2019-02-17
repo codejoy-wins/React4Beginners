@@ -39,6 +39,8 @@ class App extends Component {
         let msg = ``;
         let odd = false;
         let newMsg = ``;
+        let primeMsg = ``;
+
         if(cookies % 2 == 1){
             odd = true;
         }
@@ -51,6 +53,20 @@ class App extends Component {
             <p>That's an even number of cookies</p>
             `
         }
+        let prime = true;
+        for(let i =2; i < cookies; i++){
+            if(cookies % i ==0){
+                console.log("not a prime cookie");
+                prime = false;
+                break;
+            }else{
+                console.log("prime?");
+            }
+        }
+        if(prime && cookies >=2){
+            primeMsg = `<h1>We have a prime number!</h1>`
+        }
+
         
         if(cookies>100){
             msg = `
@@ -70,7 +86,7 @@ class App extends Component {
             `
         }
         
-        document.getElementById("output").innerHTML = msg+newMsg;
+        document.getElementById("output").innerHTML = msg+newMsg+primeMsg;
     }
 
     eatCookies = cookies => {
@@ -84,6 +100,16 @@ class App extends Component {
     }
     eatCookiesv3 = cookies => {
         cookies*=2;
+        if(cookies >= 0){
+            this.crazy(cookies);
+        }
+        this.setState({
+            cookies: cookies
+        })
+    }
+    // reset
+    eatCookiesv2 = cookies => {
+        cookies=0;
         if(cookies >= 0){
             this.crazy(cookies);
         }
@@ -110,6 +136,8 @@ class App extends Component {
                 <h2>You have eaten {cookies} cookies</h2>
                 < Cookie prop_cookies={cookies} eat_cookies={this.eatCookies} btn ="Eat more cookies"/>
                 < Cookie prop_cookies={cookies} eat_cookies={this.eatCookiesv3} btn = "Double your cookies"/>
+                < Cookie prop_cookies={cookies} eat_cookies={this.eatCookiesv2} btn = "Reset your cookies"/>
+
 
                 < Intro />
                 < Api />
