@@ -14,12 +14,10 @@ class App extends Component {
     removeCharacter = index => {
         const { characters } = this.state;
 // only keep ones whose index does not match index under deletion
+// refactored my code to elimate return with es6
         this.setState({
-            characters: characters.filter((character,i) => {
-                console.log(`checking ${character.name} against ${index}`);
-                console.log(i == index);
-                return i !== index;
-            })
+            characters: characters.filter((character,i) => i !== index
+            )
         })
     }
 
