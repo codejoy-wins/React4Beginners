@@ -5,6 +5,8 @@ import Cookie from './Cookie';
 import Api from './Api';
 import Intro from './Intro';
 import Footer from './Footer';
+import Header from './Header';
+
 
 class App extends Component {
     state = {
@@ -81,6 +83,7 @@ class App extends Component {
         // give the form the method for handling submissions
         return (
             <div className="container">
+                < Header />
                 <Table
                     characterData={characters}
                     removeCharacter={this.removeCharacter}
