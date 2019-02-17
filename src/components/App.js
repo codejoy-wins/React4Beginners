@@ -19,6 +19,22 @@ class App extends Component {
             {
                 'name': 'Dennis',
                 'job': 'Bartender'
+            },
+            {
+                'name': 'Charliev2',
+                'job': 'Janitorv2'
+            },
+            {
+                'name': 'Macv2',
+                'job': 'Bouncerv2'
+            },
+            {
+                'name': 'Deev2',
+                'job': 'Aspring actressv2'
+            },
+            {
+                'name': 'Dennisv2',
+                'job': 'Bartenderv2'
             }
         ];
         return (

@@ -13,5 +13,5 @@ const listOfObjects = [
     },
 ]
 
-console.log(listOfObjects);
-
+console.log(listOfObjects.map((objr,mindex)=>mindex + " " + objr.name + " has a cat named " + objr.cat));
+// this is the missing link of understanding I had in learning React
