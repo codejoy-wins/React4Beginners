@@ -22,6 +22,9 @@ export class Table extends Component {
     const TableBody = props => { 
         console.log(props);
         console.log(props.characterData);
+        if(props.characterData.length < 1){
+            return <p>No characters</p>;
+        }
 // starting to make sense
         console.log(props.characterData[0]);
         console.log(props.characterData[0].name);
