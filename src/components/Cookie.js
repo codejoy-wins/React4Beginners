@@ -2,13 +2,9 @@ import React, { Component } from 'react'
 
 export class Cookie extends Component {
 
-    
-
-
-
   render() {
+      //es6 destructuring
     const {prop_cookies, eat_cookies} = this.props;
-    // const {eat} = this.props;
     // want to add an onClick to the button to trigger an event that affects the home state
     return (
       <div>
