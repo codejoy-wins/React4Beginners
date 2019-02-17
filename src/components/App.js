@@ -51,7 +51,7 @@ class App extends Component {
 
     render() {
         const { characters } = this.state;
-        
+        // I get that that's restructuring but where does it belong in the file?
         return (
             <div className="container">
                 <Table

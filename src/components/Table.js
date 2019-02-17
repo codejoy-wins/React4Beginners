@@ -9,9 +9,9 @@ export class Table extends Component {
         return (
             <thead>
             <tr>
-                <th>Namex</th>
-                <th>Jobx</th>
-                <th>Mathx</th>
+                <th>Name</th>
+                <th>Job</th>
+                <th>2 to the i</th>
             </tr>
             </thead>
         )
@@ -44,8 +44,8 @@ export class Table extends Component {
                 <tr key={mindex}>
                     <td>{objr.name}</td>
                     {/* I want to do an if statement and say nice guy if index > 10 */}
-                    <td>{objr.job} bitch</td>
-                    <td>2 to the i = {Math.pow(2,mindex)}</td>
+                    <td>American {objr.job}</td>
+                    <td>{Math.pow(2,mindex)}</td>
                     <td><button onClick={()=> props.removeCharacter(mindex)}>delete</button></td>
 
                 </tr>
