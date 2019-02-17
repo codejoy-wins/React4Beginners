@@ -41,12 +41,25 @@ export class Table extends Component {
         // the .map method applies to an array of objects, and for each object in the list, it creates a variable objr for that object, and increments mindex. 
 
         // then all of the data is trapped in the myObjs element I use in tbody
+
+        //
         const myObjs = data.map((objr, mindex)=> {
-            
+            if(mindex%2==1){
+                return(
+                    <tr key={mindex}>
+                        <td>{objr.name}</td>
+                        <td>A.I. {objr.job}</td>
+                        <td>{Math.pow(2,mindex)}</td>
+                        <td><button onClick={()=> props.removeCharacter(mindex)}>delete</button></td>
+                    </tr>
+                )
+            }
             return (
                 <tr key={mindex}>
                     <td>{objr.name}</td>
                     {/* I want to do an if statement and say nice guy if index > 10 */}
+                    {/* I did it.  I made it return multiple things depending on condition of mindex */}
+
                     <td>American {objr.job}</td>
                     <td>{Math.pow(2,mindex)}</td>
                     <td><button onClick={()=> props.removeCharacter(mindex)}>delete</button></td>
