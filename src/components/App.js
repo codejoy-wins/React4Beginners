@@ -6,8 +6,6 @@ import Api from './Api';
 import Intro from './Intro';
 import Footer from './Footer';
 
-
-
 class App extends Component {
     state = {
         characters: [
@@ -67,8 +65,15 @@ class App extends Component {
             cookies: cookies
         })
     }
+    eatCookiesv3 = cookies => {
+        cookies*=2;
+        this.setState({
+            cookies: cookies
+        })
+    }
 
     
+// I'd Like to have different themes of colors for user to choose from 
 
     render() {
         const { characters, cookies } = this.state;
@@ -82,6 +87,8 @@ class App extends Component {
                 />
                 <Form handleSubmit={this.handleSubmit}/>
                 < Cookie prop_cookies={cookies} eat_cookies={this.eatCookies}/>
+                < Cookie prop_cookies={cookies} eat_cookies={this.eatCookiesv3} btn = "lol"/>
+
                 < Intro />
                 < Api />
                 < Footer />
