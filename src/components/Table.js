@@ -35,6 +35,7 @@ export class Table extends Component {
                 <tr key={mindex}>
                     <td>{objr.name}</td>
                     <td>{objr.job} bitch</td>
+                    <p>2 to the i = {Math.pow(2,mindex)}</p>
                 </tr>
             );
         });
