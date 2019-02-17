@@ -4,7 +4,7 @@ import Form from './Form';
 import Cookie from './Cookie';
 import Api from './Api';
 import Intro from './Intro';
-
+import Footer from './Footer';
 
 
 
@@ -84,6 +84,7 @@ class App extends Component {
                 < Cookie prop_cookies={cookies} eat_cookies={this.eatCookies}/>
                 < Intro />
                 < Api />
+                < Footer />
             </div>
         );
     }
