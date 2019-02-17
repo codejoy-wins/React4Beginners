@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import Table from './Table';
 import Form from './Form';
 import Cookie from './Cookie';
+import Api from './Api';
+import Intro from './Intro';
+
+
 
 
 class App extends Component {
@@ -30,7 +34,7 @@ class App extends Component {
             characters: [...this.state.characters,character]
         })
     }
-    crazy = (cookies) => {
+    crazy = cookies => {
         console.log("I want to manipulate the DOM saying you're crazy");
         let msg = ``;
         if(cookies>100){
@@ -78,6 +82,8 @@ class App extends Component {
                 />
                 <Form handleSubmit={this.handleSubmit}/>
                 < Cookie prop_cookies={cookies} eat_cookies={this.eatCookies}/>
+                < Intro />
+                < Api />
             </div>
         );
     }

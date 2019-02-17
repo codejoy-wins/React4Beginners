@@ -20,20 +20,14 @@ export class Table extends Component {
 // I get that TableBody is a function that takes in a single parameter of props which is the character list of objects from app.js
 // Then it somehow maps each object from the list into what?
     const TableBody = props => { 
-        console.log(props);
-        console.log(props.characterData);
         if(props.characterData.length < 1){
             return <p>No characters</p>;
         }
 // starting to make sense
-        console.log(props.characterData[0]);
-        console.log(props.characterData[0].name);
         const charlie = props.characterData[0];
         const charlieName = props.characterData[0].name;
         console.log(`${charlieName} is a ${charlie.job}`);
         const data = props.characterData;
-        console.log(props.characterData);
-        console.log(data);
         // Map takes in 2 parameters
         // One to refer to the current object for the function to use
         // the other to reference the current index of the list it's mapping
