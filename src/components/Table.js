@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 export class Table extends Component {
   render() {
-
-    const {characterData, removeCharacter } = this.props; // create a variable called chardata that is the props passed from app.js
+// destructuring this.props.characterData from app.js
+    const {characterData, removeCharacter } = this.props; 
 
     const TableHeader = () => {
         return (
