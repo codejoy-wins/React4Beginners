@@ -37,6 +37,21 @@ class App extends Component {
     crazy = cookies => {
         console.log("I want to manipulate the DOM saying you're crazy");
         let msg = ``;
+        let odd = false;
+        let newMsg = ``;
+        if(cookies % 2 == 1){
+            odd = true;
+        }
+        if(odd){
+            newMsg = `
+            <p>That's an odd number of cookies</p>
+        `
+        }else{
+            newMsg = `
+            <p>That's an even number of cookies</p>
+            `
+        }
+        
         if(cookies>100){
             msg = `
             <p>You're crazy for cookies!</p>
@@ -51,16 +66,16 @@ class App extends Component {
             `
         }else{
             msg =`
-            <p>Something went wrong.</p>
+            <p>Aren't you hungry?</p>
             `
         }
         
-        document.getElementById("output").innerHTML = msg;
+        document.getElementById("output").innerHTML = msg+newMsg;
     }
 
     eatCookies = cookies => {
         cookies++;
-        if(cookies >= 50){
+        if(cookies >= 0){
             this.crazy(cookies);
         }
         this.setState({
@@ -69,6 +84,9 @@ class App extends Component {
     }
     eatCookiesv3 = cookies => {
         cookies*=2;
+        if(cookies >= 0){
+            this.crazy(cookies);
+        }
         this.setState({
             cookies: cookies
         })
@@ -89,8 +107,9 @@ class App extends Component {
                     removeCharacter={this.removeCharacter}
                 />
                 <Form handleSubmit={this.handleSubmit}/>
-                < Cookie prop_cookies={cookies} eat_cookies={this.eatCookies}/>
-                < Cookie prop_cookies={cookies} eat_cookies={this.eatCookiesv3} btn = "lol"/>
+                <h2>You have eaten {cookies} cookies</h2>
+                < Cookie prop_cookies={cookies} eat_cookies={this.eatCookies} btn ="Eat more cookies"/>
+                < Cookie prop_cookies={cookies} eat_cookies={this.eatCookiesv3} btn = "Double your cookies"/>
 
                 < Intro />
                 < Api />
